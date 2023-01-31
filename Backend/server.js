@@ -1,7 +1,8 @@
 const express = require('express')
 const app = express()
-app.use(express.json())
-const PORT = 3000
+app.use(express.json()) 
+app.use(express.static('public'))
+const PORT = process.env.PORT || 3000
 
 var Teams = [
         {name:'Juventus', players:[
@@ -21,7 +22,7 @@ var Teams = [
 
 
 app.get("/", (req,res) => {
-    res.sendFile(__dirname + "/index.html")
+   
 })
 
 
